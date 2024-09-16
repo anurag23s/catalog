@@ -1,5 +1,5 @@
 # catalog
-##Polynomial Reconstruction Using Lagrange Interpolation
+## Polynomial Reconstruction Using Lagrange Interpolation
 ### installed json.hpp
 This project demonstrates how to reconstruct a polynomial's constant term using Lagrange interpolation from data provided in a JSON format. The code reads data from a JSON string, decodes values from different numerical bases, and then computes the polynomial's constant term.
 
