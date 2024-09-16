@@ -1,10 +1,9 @@
-# catalog
+# Catalog
 ## Polynomial Reconstruction Using Lagrange Interpolation
-### installed json.hpp
 This project demonstrates how to reconstruct a polynomial's constant term using Lagrange interpolation from data provided in a JSON format. The code reads data from a JSON string, decodes values from different numerical bases, and then computes the polynomial's constant term.
 
-Step-by-Step Process
-Decode Values from JSON:
+# Step-by-Step Process
+## 1. Decode Values from JSON:
 
 Function: decode_value
 Purpose: Converts a given value from a specified base to a decimal integer.
@@ -12,20 +11,28 @@ Details:
 Iterates through the value string from right to left.
 Converts each character to its decimal equivalent based on the given base.
 Accumulates the result to obtain the decimal representation.
-Perform Lagrange Interpolation:
+
+
+## 2. Perform Lagrange Interpolation:
 
 Function: lagrange_interpolation
 Purpose: Computes the Lagrange polynomial coefficients based on the given x and y values.
 Details:
 Iterates through each point and computes the polynomial's coefficients.
 Uses the Lagrange basis polynomials to construct the polynomial.
-Find the Constant Term:
+
+
+
+##  3. Find the Constant Term:
 
 Function: find_constant_term
 Purpose: Extracts the constant term (c) from the computed polynomial coefficients.
 Details:
 The constant term is the first coefficient in the list of polynomial coefficients.
-Main Program Execution:
+
+
+
+##  4. Main Program Execution:
 
 Function: main
 Purpose: Parses the JSON input, extracts and decodes the values, performs Lagrange interpolation, and prints the constant term.
@@ -33,8 +40,11 @@ Details:
 Parses JSON input to extract n, k, and data points.
 Decodes each value from its respective base.
 Computes polynomial coefficients and prints the constant term.
-Code Explanation
-Include Libraries:
+
+
+
+# Code Explanation
+##  1. Include Libraries:
 
 #include <iostream>: For input and output operations.
 #include <vector>: For using the std::vector container.
@@ -42,24 +52,30 @@ Include Libraries:
 #include <string>: For string manipulation.
 #include <sstream>: For string stream operations.
 #include <nlohmann/json.hpp>: For JSON parsing.
-Function Definitions:
+
+
+##  2. Function Definitions:
 
 decode_value(const string& value, int base): Converts a string value from a specified base to decimal.
 lagrange_interpolation(const vector<double>& x_values, const vector<double>& y_values): Calculates polynomial coefficients using Lagrange interpolation.
 find_constant_term(const vector<double>& coefficients): Retrieves the constant term from the polynomial coefficients.
-Main Function:
+
+
+## 3. Main Function:
 
 Parses a JSON string to extract data points.
 Converts values from different bases to decimal.
 Computes polynomial coefficients and prints the constant term.
+
+
 JSON Input Format
+
 keys: Contains the total number of data points (n) and the number of points required for interpolation (k).
 1, 2, ..., n: Each key represents a data point with:
 base: Numerical base of the value.
 value: The value in the specified base.
+
 Example JSON Input
-json
-Copy code
 {
     "keys": {
         "n": 4,
@@ -82,20 +98,23 @@ Copy code
         "value": "213"
     }
 }
+
+
+
 Compilation and Execution
 Compile the Code:
-
-sh
-Copy code
 g++ -o polynomial_reconstruction polynomial_reconstruction.cpp -std=c++11
+
+
 Run the Program:
-
-sh
-Copy code
 ./polynomial_reconstruction
-Enter JSON Input:
 
+
+Enter JSON Input:
 When prompted, paste the JSON input string and press Enter.
-Notes
+
+
+
+### Notes
 Ensure the nlohmann/json.hpp header file is included in your project directory or properly linked.
 Adjust the JSON input as needed to fit your data requirements.
